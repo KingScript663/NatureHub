@@ -1,7 +1,7 @@
 if game.PlaceId == 126884695634066 then
     loadstring(game:HttpGet("https://pandadevelopment.net/virtual/file/bb9db1149fb2b10d"))()
 elseif game.PlaceId == 13772394625 then
-    loadstring(game:HttpGet("https://pandadevelopment.net/virtual/file/6125b725d2953f5b"))()
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/KingScript663/NatureHub/refs/heads/main/NatureHub-BladeBall"))()
 elseif game.PlaceId == 286090429 then
     loadstring(game:HttpGet("https://pandadevelopment.net/virtual/file/3fcd344138aea4d5"))()
 end
