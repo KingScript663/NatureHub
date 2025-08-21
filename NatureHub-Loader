@@ -3,8 +3,7 @@ local function kick()
     player:Kick("No Key Found!")
 end
 
-local whitelist = loadstring(game:HttpGet("https://raw.githubusercontent.com/KingScript663/NatureHub/refs/heads/main/NatureHub-Whitelist"))()
-
+local whitelist = "IppcbosuDYHJCdLQKvHdWevwNeCjOflL"
 if not script_key then kick() end
 
 if script_key == whitelist then
