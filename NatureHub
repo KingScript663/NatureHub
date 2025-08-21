@@ -1,1 +1,12 @@
-loadstring(game:HttpGet("https://pandadevelopment.net/virtual/file/0a4e928c351d9526"))()
+-- Load script theo PlaceId
+if game.PlaceId == 126884695634066 then
+    loadstring(game:HttpGet("https://pandadevelopment.net/virtual/file/bb9db1149fb2b10d"))()
+elseif game.PlaceId == 13772394625 then
+    loadstring(game:HttpGet("https://pandadevelopment.net/virtual/file/30677f3c1e8917b0"))()
+elseif game.PlaceId == 286090429 then
+    loadstring(game:HttpGet("https://pandadevelopment.net/virtual/file/3fcd344138aea4d5"))()
+elseif game.PlaceId == 99567941238278 then
+    loadstring(game:HttpGet("https://pandadevelopment.net/virtual/file/ee28d1735ea9ba2d"))()
+else
+    print("Game Not Support")
+end
