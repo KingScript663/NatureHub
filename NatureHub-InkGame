@@ -1,0 +1,424 @@
+local Players = game:GetService("Players")
+local RunService = game:GetService("RunService")
+local Player = game.Players.LocalPlayer
+
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/KingScript663/gg/refs/heads/main/yyy"))()
+local UI = Library.new()
+UI:load()
+
+-- Tab
+local BlatantTab = UI:create_tab("Blatant", "rbxassetid://76499042599127")
+local MicTab = UI:create_tab("Misc", "rbxassetid://10723424838")
+
+-- Green Light, Red Light
+local GreenRedLightModule = BlatantTab:create_module({
+    title = "Green Light, Red Light",
+    description = "Green Light Red Light Game",
+    section = "left",
+    flag = "GreenRedLight",
+    callback = function(state)
+    end
+})
+
+GreenRedLightModule:create_checkbox({
+    title = "Complete Green Light, Red Light",
+    flag = "Complete_game",
+    callback = function(value)
+        if value then
+            if workspace:FindFirstChild("RedLightGreenLight") 
+            and workspace.RedLightGreenLight:FindFirstChild("sand") 
+            and workspace.RedLightGreenLight.sand:FindFirstChild("crossedover") 
+            and game.Players.LocalPlayer.Character 
+            and game.Players.LocalPlayer.Character:FindFirstChild("HumanoidRootPart") then
+
+                local pos = workspace.RedLightGreenLight.sand.crossedover.Position + Vector3.new(0, 5, 0)
+                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(pos, pos + Vector3.new(0, 0, -1))
+            end
+        end
+    end
+})
+
+GreenRedLightModule:create_divider({
+    showtopic = true,
+    title = "",
+    disableline = false
+})
+
+GreenRedLightModule:create_checkbox({
+    title = "Auto Help Player",
+    flag = "help",
+    callback = function(Value)
+        _G.AutoHelpPlayer = Value
+        while _G.AutoHelpPlayer do
+            for _, v in pairs(game.Players:GetPlayers()) do
+                if v.Character 
+                and v.Character:FindFirstChild("HumanoidRootPart") 
+                and v.Character.HumanoidRootPart:FindFirstChild("CarryPrompt") 
+                and v.Character.HumanoidRootPart.CarryPrompt.Enabled == true then
+
+                    if v.Character:FindFirstChild("SafeRedLightGreenLight") == nil then
+                        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v.Character.HumanoidRootPart.CFrame
+                        task.wait(0.3)
+
+                        repeat task.wait(0.1)
+                            local prompt = v.Character.HumanoidRootPart:FindFirstChild("CarryPrompt")
+                            if prompt then
+                                fireproximityprompt(prompt)
+                            end
+                        until v.Character.HumanoidRootPart.CarryPrompt.Enabled == false
+
+                        task.wait(0.5)
+                        if workspace:FindFirstChild("RedLightGreenLight") then
+                            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-75, 1025, 143)
+                        end
+                        task.wait(0.4)
+                        game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("ClickedButton"):FireServer({tryingtoleave = true})
+                        break
+                    end
+                end
+            end
+            task.wait(0.1)
+        end
+    end
+})
+
+GreenRedLightModule:create_divider({
+    showtopic = true,
+    title = "",
+    disableline = false
+})
+
+GreenRedLightModule:create_checkbox({
+    title = "Auto Troll Player",
+    flag = "troll",
+    callback = function(Value)
+        _G.AutoTrollPlayer = Value
+        while _G.AutoTrollPlayer do
+            for _, v in pairs(game.Players:GetPlayers()) do
+                if v.Character 
+                and v.Character:FindFirstChild("HumanoidRootPart") 
+                and v.Character.HumanoidRootPart:FindFirstChild("CarryPrompt") 
+                and v.Character.HumanoidRootPart.CarryPrompt.Enabled == true then
+
+                    if v.Character:FindFirstChild("SafeRedLightGreenLight") == nil then
+                        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v.Character.HumanoidRootPart.CFrame
+                        task.wait(0.3)
+
+                        repeat task.wait(0.1)
+                            local prompt = v.Character.HumanoidRootPart:FindFirstChild("CarryPrompt")
+                            if prompt then
+                                fireproximityprompt(prompt)
+                            end
+                        until v.Character.HumanoidRootPart.CarryPrompt.Enabled == false
+
+                        task.wait(0.5)
+                        if workspace:FindFirstChild("RedLightGreenLight") then
+                            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-84, 1023, -537)
+                        end
+                        task.wait(0.4)
+                        game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("ClickedButton"):FireServer({tryingtoleave = true})
+                        break
+                    end
+                end
+            end
+            task.wait(0.1)
+        end
+    end
+})
+
+-- Dalgona Game
+local DalgonaModule = BlatantTab:create_module({
+    title = "Dalgona",
+    description = "Dalgona Game",
+    section = "right",
+    flag = "dalgona",
+    callback = function(state)
+    end
+})
+
+DalgonaModule:create_checkbox({
+    title = "Complete Dalgona",
+    flag = "complete_dalgona",
+    callback = function(Value)
+        if Value then
+            local DalgonaClientModule = game.ReplicatedStorage.Modules.Games.DalgonaClient
+            for i, v in pairs(getreg()) do
+                if typeof(v) == "function" and islclosure(v) then
+                    if getfenv(v).script == DalgonaClientModule then
+                        if getinfo(v).nups == 73 then
+                            setupvalue(v, 31, 9e9)
+                        end
+                    end
+                end
+            end
+        end
+    end
+})
+
+local TugofWarModule = BlatantTab:create_module({
+    title = "Tug of War",
+    description = "Tug of War Game",
+    section = "left",
+    flag = "Tug of War",
+    callback = function(state)
+    end
+})
+
+TugofWarModule:create_checkbox({
+    title = "Auto Tug of War",
+    flag = "Auto Tug of War",
+    callback = function(Value)
+        _G.TugOfWar = Value
+while _G.TugOfWar do
+game:GetService("ReplicatedStorage"):WaitForChild("Remotes"):WaitForChild("TemporaryReachedBindable"):FireServer({GameQTE = true})
+task.wait()
+end
+    end
+})
+
+local HideAndSeekModule = BlatantTab:create_module({
+    title = "Hide And Seek",
+    description = "Hide And Seek Game",
+    section = "right",
+    flag = "Hide And Seek",
+    callback = function(state)
+    end
+})
+
+HideAndSeekModule:create_checkbox({
+    title = "Safe Base [Hide]",
+    flag = "Safe Base",
+    callback = function(Value)
+        if Value and Player and Player.Character and Player.Character:FindFirstChild("HumanoidRootPart") then
+            local hrp = Player.Character.HumanoidRootPart
+            hrp.CFrame = hrp.CFrame + Vector3.new(0, 75, 0)
+        end
+    end
+})
+
+HideAndSeekModule:create_divider({
+    showtopic = true,
+    title = "",
+    disableline = false
+})
+
+HideAndSeekModule:create_checkbox({
+    title = "Teleport To Player Hide",
+    flag = "teleport_player_hide",
+    callback = function(Value)
+        if Value then
+            for i, v in pairs(game.Players:GetChildren()) do
+                if v ~= game.Players.LocalPlayer 
+                and v.Character 
+                and v.Character:FindFirstChild("Head") 
+                and v.Character:FindFirstChild("HumanoidRootPart") 
+                and v.Character:FindFirstChild("Humanoid") then
+
+                    if v:GetAttribute("IsHider") and v.Character.Humanoid.Health > 0 then
+                        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = v.Character.HumanoidRootPart.CFrame
+                        break
+                    end
+                end
+            end
+        end
+    end
+})
+
+local JumpRopeModule = BlatantTab:create_module({
+    title = "Jump Rope",
+    description = "Jump Rope Game",
+    section = "left",
+    flag = "Jump Rope",
+    callback = function(state)
+    end
+})
+
+
+JumpRopeModule:create_checkbox({
+    title = "Complete Jump Rope",
+    flag = "Complete Jump Rope",
+    callback = function(Value)
+        if Value then
+            if workspace:WaitForChild("JumpRope") then
+                local pos = workspace.JumpRope.Important.Model.LEGS.Position
+                Player.Character.HumanoidRootPart.CFrame = CFrame.new(pos, pos + Vector3.new(0, 0, -1))
+            end
+        end
+    end
+})
+
+local GlassBridgeModule = BlatantTab:create_module({
+    title = "Glass Bridge",
+    description = "Glass Bridge Game",
+    section = "right",
+    flag = "GlassBridge",
+    callback = function(state)
+    end
+})
+
+GlassBridgeModule:create_checkbox({
+    title = "Glass Bridge Vision",
+    flag = "Glass Bridge Vision",
+    callback = function(Value)
+        if Value then
+            local GlassHolder = workspace:WaitForChild("GlassBridge"):WaitForChild("GlassHolder")
+            for i, v in pairs(GlassHolder:GetChildren()) do
+                for k, j in pairs(v:GetChildren()) do
+                    if j:IsA("Model") and j.PrimaryPart then
+                        local Color = j.PrimaryPart:GetAttribute("exploitingisevil") and Color3.fromRGB(248, 87, 87) or Color3.fromRGB(28, 235, 87)
+                        j.PrimaryPart.Color = Color
+                        j.PrimaryPart.Transparency = 0
+                        j.PrimaryPart.Material = Enum.Material.Neon
+                    end
+                end
+            end
+        end
+    end
+})
+
+GlassBridgeModule:create_divider({
+    showtopic = true,
+    title = "",
+    disableline = false
+})
+
+GlassBridgeModule:create_checkbox({  
+    title = "Complete Glass Bridge",  
+    flag = "Glass Bridge Win",  
+    callback = function(Value)  
+        if Value then  
+            if workspace:WaitForChild("GlassBridge") then  
+                local pos = workspace.GlassBridge.End.PrimaryPart.Position + Vector3.new(0, 8, 0)  
+                Player.Character.HumanoidRootPart.CFrame = CFrame.new(pos, pos + Vector3.new(0, 0, -1))  
+            end  
+        end  
+    end  
+})
+
+local SpeedModule = MicTab:create_module({
+    title = "Speed",
+    description = "Change Speed",
+    section = "left",
+    flag = "speed",
+    callback = function(Value)
+       _G.AutoSpeed = Value
+if game.Players.LocalPlayer.Character:FindFirstChild("Humanoid") then
+game.Players.LocalPlayer.Character.Humanoid.WalkSpeed = _G.Speed or 50
+end
+    end
+})
+
+SpeedModule:create_slider({
+    title = "WalkSpeed",
+    flag = "WalkSpeed",
+    minimum_value = 20, 
+    maximum_value = 1000,
+    value = 20,
+    round_number = true,
+    callback = function(Value)
+        _G.Speed = Value
+    end
+})
+
+_G.SetSpeedFly = 50  
+local FlyModule = MicTab:create_module({  
+    title = "Fly",  
+    description = "",  
+    section = "right",  
+    flag = "gv",  
+    callback = function(Value)  
+        _G.StartFly = Value  
+        while _G.StartFly do  
+            if game.Players.LocalPlayer.Character.HumanoidRootPart:FindFirstChild("BodyGyro") == nil then  
+                local bg = Instance.new("BodyGyro", game.Players.LocalPlayer.Character:FindFirstChild("HumanoidRootPart"))  
+                bg.maxTorque = Vector3.new(9e9, 9e9, 9e9)  
+                bg.P = 9e4  
+                bg.CFrame = game.Players.LocalPlayer.Character:FindFirstChild("HumanoidRootPart").CFrame  
+            end  
+            if game.Players.LocalPlayer.Character.HumanoidRootPart:FindFirstChild("BodyVelocity") == nil then  
+                local bv = Instance.new("BodyVelocity", game.Players.LocalPlayer.Character:FindFirstChild("HumanoidRootPart"))  
+                bv.Velocity = Vector3.new(0, 0, 0)  
+                bv.maxForce = Vector3.new(9e9, 9e9, 9e9)  
+            end  
+            local MoveflyPE = require(game.Players.LocalPlayer.PlayerScripts:WaitForChild("PlayerModule"):WaitForChild("ControlModule")):GetMoveVector()  
+            if game.Players.LocalPlayer.Character:FindFirstChild("HumanoidRootPart") and game.Players.LocalPlayer.Character.HumanoidRootPart:FindFirstChild("BodyVelocity") and game.Players.LocalPlayer.Character.HumanoidRootPart:FindFirstChild("BodyGyro") then  
+                game.Players.LocalPlayer.Character.HumanoidRootPart.BodyVelocity.MaxForce = Vector3.new(9e9,9e9,9e9)  
+                game.Players.LocalPlayer.Character.HumanoidRootPart.BodyGyro.MaxTorque = Vector3.new(9e9,9e9,9e9)  
+                game.Players.LocalPlayer.Character.HumanoidRootPart.BodyGyro.CFrame = CFrame.new(game.Players.LocalPlayer.Character.HumanoidRootPart.Position, game.Players.LocalPlayer.Character.HumanoidRootPart.Position + game.Workspace.CurrentCamera.CFrame.LookVector)  
+                game.Players.LocalPlayer.Character.HumanoidRootPart.BodyVelocity.Velocity = Vector3.new()  
+                if MoveflyPE.X > 0 then  
+                    game.Players.LocalPlayer.Character.HumanoidRootPart.BodyVelocity.Velocity = game.Players.LocalPlayer.Character.HumanoidRootPart.BodyVelocity.Velocity + game.Workspace.CurrentCamera.CFrame.RightVector * (MoveflyPE.X * _G.SetSpeedFly)  
+                end  
+                if MoveflyPE.X < 0 then  
+                    game.Players.LocalPlayer.Character.HumanoidRootPart.BodyVelocity.Velocity = game.Players.LocalPlayer.Character.HumanoidRootPart.BodyVelocity.Velocity + game.Workspace.CurrentCamera.CFrame.RightVector * (MoveflyPE.X * _G.SetSpeedFly)  
+                end  
+                if MoveflyPE.Z > 0 then  
+                    game.Players.LocalPlayer.Character.HumanoidRootPart.BodyVelocity.Velocity = game.Players.LocalPlayer.Character.HumanoidRootPart.BodyVelocity.Velocity - game.Workspace.CurrentCamera.CFrame.LookVector * (MoveflyPE.Z * _G.SetSpeedFly)  
+                end  
+                if MoveflyPE.Z < 0 then  
+                    game.Players.LocalPlayer.Character.HumanoidRootPart.BodyVelocity.Velocity = game.Players.LocalPlayer.Character.HumanoidRootPart.BodyVelocity.Velocity - game.Workspace.CurrentCamera.CFrame.LookVector * (MoveflyPE.Z * _G.SetSpeedFly)  
+                end  
+            end  
+            task.wait()  
+        end  
+        if game.Players.LocalPlayer.Character:FindFirstChild("HumanoidRootPart") then  
+            if game.Players.LocalPlayer.Character.HumanoidRootPart:FindFirstChild("BodyGyro") then  
+                game.Players.LocalPlayer.Character.HumanoidRootPart:FindFirstChild("BodyGyro"):Destroy()  
+            end  
+            if game.Players.LocalPlayer.Character.HumanoidRootPart:FindFirstChild("BodyVelocity") then  
+                game.Players.LocalPlayer.Character.HumanoidRootPart:FindFirstChild("BodyVelocity"):Destroy()  
+            end  
+        end  
+    end  
+})
+
+local FlingModule = MicTab:create_module({  
+    title = "Anti Fling",  
+    description = "",  
+    section = "left",  
+    flag = "anti",  
+    callback = function(Value)
+        _G.AntiFling = Value
+while _G.AntiFling do
+for i, v in pairs(game.Players:GetChildren()) do
+    if v ~= game.Players.LocalPlayer and v.Character then
+        for _, k in pairs(v.Character:GetChildren()) do
+            if k:IsA("BasePart") then
+                k.CanCollide = false
+            end
+        end
+    end
+end
+task.wait()
+end
+    end
+})
+
+local NoclipModule = MicTab:create_module({  
+    title = "NoClip",  
+    description = "",  
+    section = "right",  
+    flag = "noclip",  
+    callback = function(Value)
+        _G.NoclipCharacter = Value
+        if _G.NoclipCharacter == false then
+            if game.Players.LocalPlayer.Character ~= nil then
+                for i, v in pairs(game.Players.LocalPlayer.Character:GetChildren()) do
+                    if v:IsA("BasePart") and v.CanCollide == false then
+                        v.CanCollide = true
+                    end
+                end
+            end
+        end
+        while _G.NoclipCharacter do
+            if game.Players.LocalPlayer.Character ~= nil then
+                for i, v in pairs(game.Players.LocalPlayer.Character:GetChildren()) do
+                    if v:IsA("BasePart") then
+                        v.CanCollide = false
+                    end
+                end
+            end
+            task.wait()
+        end
+    end
+})
