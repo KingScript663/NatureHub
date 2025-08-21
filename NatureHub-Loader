@@ -1,26 +1,15 @@
-local function kick()
-    local player = game.Players.LocalPlayer
+local player = game.Players.LocalPlayer
+
+local Whitelist = "jGFuXNgnIIcWRvZwHKIglUkIDIsUoxuD"
+
+if not script_key then
     player:Kick("No Key Found!")
 end
 
-local whitelist = "IppcbosuDYHJCdLQKvHdWevwNeCjOflL"
-if not script_key then kick() end
-
-if script_key == whitelist then
-    print("Correct Key | Script Made By: KingScript")
+if script_key == Whitelist then
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/KingScript663/NatureHub/refs/heads/main/NatureHub2"))()
+elseif script_key == "KingScript-72093047689" then
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/KingScript663/NatureHub/refs/heads/main/NatureHub2"))()
 else
-    kick()
-end
-
--- Phần load script theo PlaceId
-if game.PlaceId == 126884695634066 then
-    loadstring(game:HttpGet("https://pandadevelopment.net/virtual/file/bb9db1149fb2b10d"))()
-elseif game.PlaceId == 13772394625 then
-    loadstring(game:HttpGet("https://pandadevelopment.net/virtual/file/30677f3c1e8917b0"))()
-elseif game.PlaceId == 286090429 then
-    loadstring(game:HttpGet("https://pandadevelopment.net/virtual/file/3fcd344138aea4d5"))()
-elseif game.PlaceId == 99567941238278 then
-    loadstring(game:HttpGet("https://pandadevelopment.net/virtual/file/ee28d1735ea9ba2d"))()
-else
-    print("Game Not Support")
+    player:Kick("No Key Found!")
 end
