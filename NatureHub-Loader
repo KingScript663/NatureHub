@@ -1,6 +1,6 @@
 local player = game.Players.LocalPlayer
 
-local Whitelist = "cElJSJFvkjnGTymgeyxDbebiomOlguPm"
+local Whitelist = "wbzYFiZBjVOrYGXwialzgupKgCXRhBpc"
 
 if not script_key then
     player:Kick("No Key Found!")
