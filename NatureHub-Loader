@@ -8,7 +8,7 @@ end
 
 if script_key == Whitelist then
     loadstring(game:HttpGet("https://raw.githubusercontent.com/KingScript663/NatureHub/refs/heads/main/NatureHub2"))()
-elseif script_key == "KingScript-72093047689" then
+elseif script_key == "KingScript-77556558588447689" then
         loadstring(game:HttpGet("https://raw.githubusercontent.com/KingScript663/NatureHub/refs/heads/main/NatureHub2"))()
 else
     player:Kick("Wrong Key!")
