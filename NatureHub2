@@ -6,6 +6,8 @@ elseif game.PlaceId == 286090429 then
     loadstring(game:HttpGet("https://pandadevelopment.net/virtual/file/3fcd344138aea4d5"))()
 elseif game.PlaceId == 99567941238278 then
     loadstring(game:HttpGet("https://pandadevelopment.net/virtual/file/ee28d1735ea9ba2d"))()
+elseif game.PlaceId == 7326934954 then
+    loadstring(game:HttpGet("https://raw.githubusercontent.com/KingScript663/NatureHub/refs/heads/main/NatureHub-Deer"))()
 else
     print("Game Not Support")
 end
