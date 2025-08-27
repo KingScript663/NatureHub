@@ -858,7 +858,7 @@ end
 local Window = WindUI:CreateWindow({
     Title = "Nature Hub",
     Icon = "leaf", 
-    Author = "Owner And Main Developer: KingScript | Tester: Kai",
+    Author = "Owner And Main Developer: KingScript | Tester 1: Kai | Tester 2: Santsx",
     Folder = "KingScript",
     Size = UDim2.fromOffset(500, 350),
     Transparent = getgenv().TransparencyEnabled,
